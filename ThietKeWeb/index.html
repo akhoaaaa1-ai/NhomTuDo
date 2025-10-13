@@ -1,0 +1,215 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đánh giá sách nhóm Tự Do</title>
+  <link rel="icon" type="image/icon.jpg" href="images/icon.jpg">
+  <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>📘 Đánh giá sách nhóm Tự Do</h1>
+  </header>
+
+  <!-- Giới thiệu nhóm -->
+  <section class="team">
+    <h2>👥 Thành viên nhóm</h2>
+    <div class="team-container">
+      <div class="member" onclick="showInfo(0)">
+        <img src="images/phuc.jpg" alt="Nguyễn Hoàng Phúc">
+        <p>Nguyễn Hoàng Phúc</p>
+      </div>
+      <div class="member" onclick="showInfo(1)">
+        <img src="images/khoa.jpg" alt="Nguyễn Trương Anh Khoa">
+        <p>Nguyễn Trương Anh Khoa</p>
+      </div>
+      <div class="member" onclick="showInfo(2)">
+        <img src="images/nhat.jpg" alt="Nguyễn Quang Nhật">
+        <p>Nguyễn Quang Nhật</p>
+      </div>
+      <div class="member" onclick="showInfo(3)">
+        <img src="images/phat.jpg" alt="Voong Sìn Phát">
+        <p>Voong Sìn Phát</p>
+      </div>
+      <div class="member" onclick="showInfo(4)">
+        <img src="images/thang.jpg" alt="Huỳnh Minh Thắng">
+        <p>Huỳnh Minh Thắng</p>
+      </div>
+    </div>
+
+    <div class="info-box" id="info-box">
+      <h3 id="info-name">Chọn thành viên để xem thông tin</h3>
+      <p id="info-desc"></p>
+      <a id="info-link" href="#" target="_blank"></a>
+    </div>
+  </section>
+
+  <!-- Đánh giá sách -->
+  <section class="books">
+    <h2>📚 Bộ truyện Harry Potter</h2>
+    <div class="book-grid" id="book-grid">
+
+      <div class="book-card" data-title="Harry Potter và Hòn đá Phù thủy" data-img="book1.jpg" data-desc="Khởi đầu huyền thoại, khi Harry phát hiện ra thế giới phù thủy.">
+        <img src="images/book1.jpg" alt="Harry Potter và Hòn đá Phù thủy">
+        <h3>Harry Potter và Hòn đá Phù thủy</h3>
+        <p>Khởi đầu huyền thoại, khi Harry phát hiện ra thế giới phù thủy.</p>
+        <p class="review">Một mở đầu tuyệt vời cho hành trình phép thuật, mang lại cảm xúc và sự kỳ diệu.</p>
+        <p>⭐ 4.7/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Phòng chứa bí mật" data-img="book2.jpg" data-desc="Những bí ẩn dưới trường Hogwarts dần hé lộ.">
+        <img src="images/book2.jpg" alt="Harry Potter và Phòng chứa bí mật">
+        <h3>Harry Potter và Phòng chứa bí mật</h3>
+        <p>Những bí ẩn dưới trường Hogwarts dần hé lộ.</p>
+        <p class="review">Gay cấn, đầy bất ngờ, giúp thế giới phép thuật thêm chiều sâu.</p>
+        <p>⭐ 4.5/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Tù nhân ngục Azkaban" data-img="book3.jpg" data-desc="Cuộc gặp gỡ với Sirius Black – một bước ngoặt cảm xúc.">
+        <img src="images/book3.jpg" alt="Harry Potter và Tù nhân ngục Azkaban">
+        <h3>Harry Potter và Tù nhân ngục Azkaban</h3>
+        <p>Cuộc gặp gỡ với Sirius Black – một bước ngoặt cảm xúc.</p>
+        <p class="review">Kịch tính, nhân văn và sâu sắc hơn hẳn hai phần đầu.</p>
+        <p>⭐ 4.8/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Chiếc cốc lửa" data-img="book4.jpg" data-desc="Giải đấu Tam Pháp Thuật và sự trở lại của Voldemort.">
+        <img src="images/book4.jpg" alt="Harry Potter và Chiếc cốc lửa">
+        <h3>Harry Potter và Chiếc cốc lửa</h3>
+        <p>Giải đấu Tam Pháp Thuật và sự trở lại của Voldemort.</p>
+        <p class="review">Một phần đỉnh cao về hành động và cảm xúc.</p>
+        <p>⭐ 4.9/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Hội Phượng Hoàng" data-img="book5.jpg" data-desc="Cuộc chiến giữa ánh sáng và bóng tối ngày càng căng thẳng.">
+        <img src="images/book5.jpg" alt="Harry Potter và Hội Phượng Hoàng">
+        <h3>Harry Potter và Hội Phượng Hoàng</h3>
+        <p>Cuộc chiến giữa ánh sáng và bóng tối ngày càng căng thẳng.</p>
+        <p class="review">Cảm xúc, chính trị và tâm lý được đan xen sâu sắc.</p>
+        <p>⭐ 4.6/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Hoàng tử lai" data-img="book6.jpg" data-desc="Những bí mật về quá khứ của Voldemort được tiết lộ.">
+        <img src="images/book6.jpg" alt="Harry Potter và Hoàng tử lai">
+        <h3>Harry Potter và Hoàng tử lai</h3>
+        <p>Những bí mật về quá khứ của Voldemort được tiết lộ.</p>
+        <p class="review">Tối tăm, bi thương và cuốn hút đến trang cuối.</p>
+        <p>⭐ 4.7/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+      <div class="book-card" data-title="Harry Potter và Bảo bối tử thần" data-img="book7.jpg" data-desc="Trận chiến cuối cùng giữa thiện và ác.">
+        <img src="images/book7.jpg" alt="Harry Potter và Bảo bối tử thần">
+        <h3>Harry Potter và Bảo bối tử thần</h3>
+        <p>Trận chiến cuối cùng giữa thiện và ác.</p>
+        <p class="review">Một kết thúc hoành tráng và cảm động cho cả hành trình.</p>
+        <p>⭐ 5.0/5</p>
+        <button class="fav-btn">♡ Yêu thích</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Phần yêu thích -->
+  <section class="favorites" id="favorites">
+    <h2>❤️ Sách yêu thích của bạn</h2>
+    <div class="book-grid" id="fav-grid">
+      <p class="no-fav">Chưa có sách yêu thích nào.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nhóm Tự Do - Ứng dụng Web Đánh giá Sách</p>
+  </footer>
+
+  <script>
+  // --- Dữ liệu thành viên ---
+  const members = [
+    {name:"Nguyễn Hoàng Phúc",desc:"Quê quán: Củ Chi<br>Sở thích: Nghe nhạc<br>Kỹ năng: Hát",link:"https://www.facebook.com/hoagfpkuk?locale=vi_VN"},
+    {name:"Nguyễn Trương Anh Khoa",desc:"Quê quán: Bình Dương<br>Sở thích: Chơi game<br>Kỹ năng: Làm việc nhóm",link:"https://www.facebook.com/anh.khoa.308330?locale=vi_VN"},
+    {name:"Nguyễn Quang Nhật",desc:"Quê quán: Thừa Thiên Huế<br>Sở thích: Chơi game<br>Kỹ năng: Nhảy",link:"https://www.facebook.com/share/1BFbdFB7zn/?mibextid=wwXIf"},
+    {name:"Voong Sìn Phát",desc:"Quê quán: Đồng Nai<br>Sở thích: Đọc tiểu thuyết trinh thám<br>Kỹ năng: Thiết kế giao diện web",link:"https://www.facebook.com/share/16TrhWLqz9/?mibextid=wwXIfr"},
+    {name:"Huỳnh Minh Thắng",desc:"Quê quán: Tiền Giang<br>Sở thích: Viết blog và đọc sách fantasy<br>Kỹ năng: Viết nội dung & đánh giá sách",link:"https://www.facebook.com/phuonglinh.writer"}
+  ];
+
+  // --- Hiển thị thông tin nhóm ---
+  function showInfo(i) {
+    document.getElementById("info-name").innerHTML = members[i].name;
+    document.getElementById("info-desc").innerHTML = members[i].desc;
+    const link = document.getElementById("info-link");
+    link.href = members[i].link;
+    link.textContent = "Facebook cá nhân";
+    document.getElementById("info-box").classList.add("show");
+  }
+
+  // --- Phần Yêu Thích ---
+  const favGrid = document.getElementById("fav-grid");
+  const favBooks = new Set();
+
+  document.querySelectorAll(".fav-btn").forEach(btn => {
+    btn.addEventListener("click", function() {
+      const card = this.closest(".book-card");
+      const title = card.dataset.title;
+      const desc = card.dataset.desc;
+
+      if (favBooks.has(title)) {
+        // Nếu đã yêu thích -> bỏ
+        favBooks.delete(title);
+        this.textContent = "♡ Yêu thích";
+        document.querySelector(`#fav-grid [data-title="${title}"]`)?.remove();
+      } else {
+        // Thêm yêu thích
+        favBooks.add(title);
+        this.textContent = "❤️ Đã thích";
+
+        const favCard = document.createElement("div");
+        favCard.classList.add("book-card");
+        favCard.dataset.title = title;
+        favCard.innerHTML = `
+          <h3 class="fav-link" style="cursor:pointer; color:#0077cc; text-decoration:underline;">${title}</h3>
+          <p>${desc}</p>
+          <button class="remove-btn">🗑️ Bỏ yêu thích</button>
+        `;
+        favGrid.appendChild(favCard);
+        favGrid.querySelector(".no-fav")?.remove();
+
+        // Khi nhấn vào tên trong danh sách yêu thích -> cuộn đến sách gốc
+        favCard.querySelector(".fav-link").addEventListener("click", () => {
+          const targetBook = document.querySelector(`.book-card[data-title='${title}']`);
+          if (targetBook) {
+            targetBook.scrollIntoView({ behavior: "smooth", block: "center" });
+            targetBook.classList.add("highlight");
+            setTimeout(() => targetBook.classList.remove("highlight"), 1500);
+          }
+        });
+
+        // Bỏ yêu thích
+        favCard.querySelector(".remove-btn").addEventListener("click", () => {
+          favBooks.delete(title);
+          favCard.remove();
+          document.querySelectorAll(".book-card").forEach(b => {
+            if (b.dataset.title === title) {
+              b.querySelector(".fav-btn").textContent = "♡ Yêu thích";
+            }
+          });
+          if (favBooks.size === 0) {
+            favGrid.innerHTML = '<p class="no-fav">Chưa có sách yêu thích nào.</p>';
+          }
+        });
+      }
+
+      if (favBooks.size === 0) {
+        favGrid.innerHTML = '<p class="no-fav">Chưa có sách yêu thích nào.</p>';
+      }
+    });
+  });
+</script>
+
+
