@@ -1,215 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đánh giá sách nhóm Tự Do</title>
-  <link rel="icon" type="image/icon.jpg" href="images/icon.jpg">
-  <link rel="stylesheet" href="styl.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      bottom: -150px;
+      width: 15px;
+      height: 15px;
+      background: rgba(0, 255, 200, 0.4);
+      border-radius: 50%;
+      animation: float 10s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px 60px;
+      border-radius: 30px;
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.4);
+      width: 380px;
+      transition: transform 0.4s ease;
+    }
+
+    .container:hover { transform: scale(1.02); }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffe1;
+      text-shadow: 0 0 15px #00ffe1;
+      margin-bottom: 25px;
+    }
+
+    .member {
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .member.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .member img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #00ffe1;
+      box-shadow: 0 0 30px rgba(0, 255, 200, 0.6);
+      margin-bottom: 20px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .member img:hover { transform: scale(1.1) rotate(3deg); }
+
+    .member h2 {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .btn-about {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      padding: 10px 25px;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.5);
+    }
+
+    .btn-about:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 75, 43, 0.8);
+    }
+
+    .controls {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .arrow-btn {
+      background: #00ffe1;
+      border: none;
+      color: #000;
+      font-weight: 600;
+      padding: 10px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00ffe1;
+    }
+
+    .arrow-btn:hover {
+      transform: scale(1.1);
+      background: #00ffbf;
+      box-shadow: 0 0 25px #00ffe1;
+    }
+
+    @media (max-width: 500px) {
+      .container { width: 85%; padding: 40px 30px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="particles"></div>
 
-  <!-- Header -->
-  <header class="header">
-    <h1>📘 Đánh giá sách nhóm Tự Do</h1>
-  </header>
+  <div class="container">
+    <h1>Meet Our Team</h1>
 
-  <!-- Giới thiệu nhóm -->
-  <section class="team">
-    <h2>👥 Thành viên nhóm</h2>
-    <div class="team-container">
-      <div class="member" onclick="showInfo(0)">
-        <img src="images/phuc.jpg" alt="Nguyễn Hoàng Phúc">
-        <p>Nguyễn Hoàng Phúc</p>
+    <div id="members">
+      <div class="member active"
+      <div class="member" data-link="https://berei06.github.io/Portfolio_NguyenHoangPhuc_24050019/">
+        <img src="images/phuc.jpg" alt="Phúc">
+        <h2>Nguyễn Hoàng Phúc</h2>
+        <button class="btn-about">About Me</button>
       </div>
-      <div class="member" onclick="showInfo(1)">
-        <img src="images/khoa.jpg" alt="Nguyễn Trương Anh Khoa">
-        <p>Nguyễn Trương Anh Khoa</p>
+
+      <div class="member" data-link="https://24050036-svg.github.io/NguyenTruongAnhKhoa-24050036/">
+        <img src="images/khoa.jpg" alt="Khoa">
+        <h2>Nguyễn Trương Anh Khoa</h2>
+        <button class="btn-about">About Me</button>
       </div>
-      <div class="member" onclick="showInfo(2)">
-        <img src="images/nhat.jpg" alt="Nguyễn Quang Nhật">
-        <p>Nguyễn Quang Nhật</p>
+
+      <div class="member" data-link="https://japannguyen.github.io/NguyenQuangNhat-24050025/">
+        <img src="images/nhat.jpg" alt="Nhật">
+        <h2>Nguyễn Quang Nhật</h2>
+        <button class="btn-about">About Me</button>
       </div>
-      <div class="member" onclick="showInfo(3)">
-        <img src="images/phat.jpg" alt="Voong Sìn Phát">
-        <p>Voong Sìn Phát</p>
+
+      <div class="member" data-link="https://enna2006.github.io/phat/">
+        <img src="images/phat.jpg" alt="Phát">
+        <h2>Voong Sìn Phát</h2>
+        <button class="btn-about">About Me</button>
       </div>
-      <div class="member" onclick="showInfo(4)">
-        <img src="images/thang.jpg" alt="Huỳnh Minh Thắng">
-        <p>Huỳnh Minh Thắng</p>
+
+      <div class="member" data-link="https://minhthang5956535-wq.github.io/Portfolo/">
+        <img src="images/thang.jpg" alt="Thắng">
+        <h2>Huỳnh Minh Thắng</h2>
+        <button class="btn-about">About Me</button>
       </div>
     </div>
 
-    <div class="info-box" id="info-box">
-      <h3 id="info-name">Chọn thành viên để xem thông tin</h3>
-      <p id="info-desc"></p>
-      <a id="info-link" href="#" target="_blank"></a>
+    <div class="controls">
+      <button class="arrow-btn" id="prev">← Back</button>
+      <button class="arrow-btn" id="next">Next →</button>
     </div>
-  </section>
-
-  <!-- Đánh giá sách -->
-  <section class="books">
-    <h2>📚 Bộ truyện Harry Potter</h2>
-    <div class="book-grid" id="book-grid">
-
-      <div class="book-card" data-title="Harry Potter và Hòn đá Phù thủy" data-img="book1.jpg" data-desc="Khởi đầu huyền thoại, khi Harry phát hiện ra thế giới phù thủy.">
-        <img src="images/book1.jpg" alt="Harry Potter và Hòn đá Phù thủy">
-        <h3>Harry Potter và Hòn đá Phù thủy</h3>
-        <p>Khởi đầu huyền thoại, khi Harry phát hiện ra thế giới phù thủy.</p>
-        <p class="review">Một mở đầu tuyệt vời cho hành trình phép thuật, mang lại cảm xúc và sự kỳ diệu.</p>
-        <p>⭐ 4.7/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Phòng chứa bí mật" data-img="book2.jpg" data-desc="Những bí ẩn dưới trường Hogwarts dần hé lộ.">
-        <img src="images/book2.jpg" alt="Harry Potter và Phòng chứa bí mật">
-        <h3>Harry Potter và Phòng chứa bí mật</h3>
-        <p>Những bí ẩn dưới trường Hogwarts dần hé lộ.</p>
-        <p class="review">Gay cấn, đầy bất ngờ, giúp thế giới phép thuật thêm chiều sâu.</p>
-        <p>⭐ 4.5/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Tù nhân ngục Azkaban" data-img="book3.jpg" data-desc="Cuộc gặp gỡ với Sirius Black – một bước ngoặt cảm xúc.">
-        <img src="images/book3.jpg" alt="Harry Potter và Tù nhân ngục Azkaban">
-        <h3>Harry Potter và Tù nhân ngục Azkaban</h3>
-        <p>Cuộc gặp gỡ với Sirius Black – một bước ngoặt cảm xúc.</p>
-        <p class="review">Kịch tính, nhân văn và sâu sắc hơn hẳn hai phần đầu.</p>
-        <p>⭐ 4.8/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Chiếc cốc lửa" data-img="book4.jpg" data-desc="Giải đấu Tam Pháp Thuật và sự trở lại của Voldemort.">
-        <img src="images/book4.jpg" alt="Harry Potter và Chiếc cốc lửa">
-        <h3>Harry Potter và Chiếc cốc lửa</h3>
-        <p>Giải đấu Tam Pháp Thuật và sự trở lại của Voldemort.</p>
-        <p class="review">Một phần đỉnh cao về hành động và cảm xúc.</p>
-        <p>⭐ 4.9/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Hội Phượng Hoàng" data-img="book5.jpg" data-desc="Cuộc chiến giữa ánh sáng và bóng tối ngày càng căng thẳng.">
-        <img src="images/book5.jpg" alt="Harry Potter và Hội Phượng Hoàng">
-        <h3>Harry Potter và Hội Phượng Hoàng</h3>
-        <p>Cuộc chiến giữa ánh sáng và bóng tối ngày càng căng thẳng.</p>
-        <p class="review">Cảm xúc, chính trị và tâm lý được đan xen sâu sắc.</p>
-        <p>⭐ 4.6/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Hoàng tử lai" data-img="book6.jpg" data-desc="Những bí mật về quá khứ của Voldemort được tiết lộ.">
-        <img src="images/book6.jpg" alt="Harry Potter và Hoàng tử lai">
-        <h3>Harry Potter và Hoàng tử lai</h3>
-        <p>Những bí mật về quá khứ của Voldemort được tiết lộ.</p>
-        <p class="review">Tối tăm, bi thương và cuốn hút đến trang cuối.</p>
-        <p>⭐ 4.7/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-      <div class="book-card" data-title="Harry Potter và Bảo bối tử thần" data-img="book7.jpg" data-desc="Trận chiến cuối cùng giữa thiện và ác.">
-        <img src="images/book7.jpg" alt="Harry Potter và Bảo bối tử thần">
-        <h3>Harry Potter và Bảo bối tử thần</h3>
-        <p>Trận chiến cuối cùng giữa thiện và ác.</p>
-        <p class="review">Một kết thúc hoành tráng và cảm động cho cả hành trình.</p>
-        <p>⭐ 5.0/5</p>
-        <button class="fav-btn">♡ Yêu thích</button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Phần yêu thích -->
-  <section class="favorites" id="favorites">
-    <h2>❤️ Sách yêu thích của bạn</h2>
-    <div class="book-grid" id="fav-grid">
-      <p class="no-fav">Chưa có sách yêu thích nào.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Nhóm Tự Do - Ứng dụng Web Đánh giá Sách</p>
-  </footer>
+  </div>
 
   <script>
-  // --- Dữ liệu thành viên ---
-  const members = [
-    {name:"Nguyễn Hoàng Phúc",desc:"Quê quán: Củ Chi<br>Sở thích: Nghe nhạc<br>Kỹ năng: Hát",link:"https://www.facebook.com/hoagfpkuk?locale=vi_VN"},
-    {name:"Nguyễn Trương Anh Khoa",desc:"Quê quán: Bình Dương<br>Sở thích: Chơi game<br>Kỹ năng: Làm việc nhóm",link:"https://www.facebook.com/anh.khoa.308330?locale=vi_VN"},
-    {name:"Nguyễn Quang Nhật",desc:"Quê quán: Thừa Thiên Huế<br>Sở thích: Chơi game<br>Kỹ năng: Nhảy",link:"https://www.facebook.com/share/1BFbdFB7zn/?mibextid=wwXIf"},
-    {name:"Voong Sìn Phát",desc:"Quê quán: Đồng Nai<br>Sở thích: Đọc tiểu thuyết trinh thám<br>Kỹ năng: Thiết kế giao diện web",link:"https://www.facebook.com/share/16TrhWLqz9/?mibextid=wwXIfr"},
-    {name:"Huỳnh Minh Thắng",desc:"Quê quán: Tiền Giang<br>Sở thích: Viết blog và đọc sách fantasy<br>Kỹ năng: Viết nội dung & đánh giá sách",link:"https://www.facebook.com/phuonglinh.writer"}
-  ];
+    const members = document.querySelectorAll('.member');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    const aboutBtns = document.querySelectorAll('.btn-about');
+    const particles = document.querySelector('.particles');
+    let index = 0;
 
-  // --- Hiển thị thông tin nhóm ---
-  function showInfo(i) {
-    document.getElementById("info-name").innerHTML = members[i].name;
-    document.getElementById("info-desc").innerHTML = members[i].desc;
-    const link = document.getElementById("info-link");
-    link.href = members[i].link;
-    link.textContent = "Facebook cá nhân";
-    document.getElementById("info-box").classList.add("show");
-  }
+    function showMember(i) {
+      members.forEach(m => m.classList.remove('active'));
+      members[i].classList.add('active');
+    }
 
-  // --- Phần Yêu Thích ---
-  const favGrid = document.getElementById("fav-grid");
-  const favBooks = new Set();
-
-  document.querySelectorAll(".fav-btn").forEach(btn => {
-    btn.addEventListener("click", function() {
-      const card = this.closest(".book-card");
-      const title = card.dataset.title;
-      const desc = card.dataset.desc;
-
-      if (favBooks.has(title)) {
-        // Nếu đã yêu thích -> bỏ
-        favBooks.delete(title);
-        this.textContent = "♡ Yêu thích";
-        document.querySelector(`#fav-grid [data-title="${title}"]`)?.remove();
-      } else {
-        // Thêm yêu thích
-        favBooks.add(title);
-        this.textContent = "❤️ Đã thích";
-
-        const favCard = document.createElement("div");
-        favCard.classList.add("book-card");
-        favCard.dataset.title = title;
-        favCard.innerHTML = `
-          <h3 class="fav-link" style="cursor:pointer; color:#0077cc; text-decoration:underline;">${title}</h3>
-          <p>${desc}</p>
-          <button class="remove-btn">🗑️ Bỏ yêu thích</button>
-        `;
-        favGrid.appendChild(favCard);
-        favGrid.querySelector(".no-fav")?.remove();
-
-        // Khi nhấn vào tên trong danh sách yêu thích -> cuộn đến sách gốc
-        favCard.querySelector(".fav-link").addEventListener("click", () => {
-          const targetBook = document.querySelector(`.book-card[data-title='${title}']`);
-          if (targetBook) {
-            targetBook.scrollIntoView({ behavior: "smooth", block: "center" });
-            targetBook.classList.add("highlight");
-            setTimeout(() => targetBook.classList.remove("highlight"), 1500);
-          }
-        });
-
-        // Bỏ yêu thích
-        favCard.querySelector(".remove-btn").addEventListener("click", () => {
-          favBooks.delete(title);
-          favCard.remove();
-          document.querySelectorAll(".book-card").forEach(b => {
-            if (b.dataset.title === title) {
-              b.querySelector(".fav-btn").textContent = "♡ Yêu thích";
-            }
-          });
-          if (favBooks.size === 0) {
-            favGrid.innerHTML = '<p class="no-fav">Chưa có sách yêu thích nào.</p>';
-          }
-        });
-      }
-
-      if (favBooks.size === 0) {
-        favGrid.innerHTML = '<p class="no-fav">Chưa có sách yêu thích nào.</p>';
-      }
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % members.length;
+      showMember(index);
     });
-  });
-</script>
 
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + members.length) % members.length;
+      showMember(index);
+    });
 
+    // Auto slide
+    setInterval(() => {
+      index = (index + 1) % members.length;
+      showMember(index);
+    }, 5000);
+
+    // Khi nhấn "About Me" mở link
+    aboutBtns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const member = members[i];
+        const link = member.dataset.link;
+        if (link && link.startsWith("http")) {
+          window.open(link, "_blank");
+        } else {
+          alert("Link chưa được gắn cho thành viên này!");
+        }
+      });
+    });
+
+    // Hạt bay
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.animationDuration = `${5 + Math.random() * 5}s`;
+      particle.style.width = particle.style.height = `${5 + Math.random() * 15}px`;
+      particles.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
